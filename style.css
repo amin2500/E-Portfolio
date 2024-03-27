@@ -20,6 +20,9 @@
 html body {
   overflow-x: hidden;
 }
+html{
+    scroll-behavior: smooth;
+}
 
 .blob {
   position: absolute;
@@ -43,7 +46,7 @@ html body {
   bottom: -3450px;
 }
 
-#home #project {
+#Home #project {
   position: relative;
 }
 
@@ -64,6 +67,7 @@ nav {
   width: 100%;
   max-width: 1024px;
   margin: auto;
+  border-radius: 4px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   height: 100%;
   padding: 0 20px;
@@ -96,9 +100,109 @@ nav {
   cursor: pointer;
 }
 
+/* Navbar Section */
+
+.navbar__button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 24px;
+  display: none;
+}
+
+/*  */
+.menu__wrapper {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 10;
+  backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: end;
+  visibility: hidden;
+  opacity: 0;
+  transition: 200ms ease;
+}
+
+.open .menu__wrapper {
+  visibility: visible;
+  opacity: 1;
+}
+
+.nav__bar {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  max-width: 320px;
+  padding: 80px 16px;
+  transform: translateX(100%);
+  transition: 300ms ease;
+}
+
+.open .nav__bar {
+  transform: translateX(0%);
+}
+
+.nav__bar__links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.nav__bar__link {
+  width: 100%;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  border-radius: 4px;
+  padding: 12px 8px;
+  transition: 200ms easee;
+}
+
+.nav__bar__link:not(:last-child):hover {
+  background-color: #f3f4f6;
+}
+
+.close__button {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 4px;
+  border: none;
+  font-size: 14px;
+  padding: 8px 12px;
+  transition: 200ms ease;
+}
+
+.close__button:hover {
+  background-color: #f3f4f6;
+}
+
+.nav__bar__button {
+  width: 100%;
+  height: 48px;
+  color: white;
+  background-color: black;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 200ms ease;
+  border: 1px transparent solid;
+}
+
+.nav__bar__button:hover {
+  background-color: white;
+  color: black;
+  border-color: black;
+}
+
 /* Header Section */
 
-#home {
+#Home {
   width: 100%;
   height: 100vh;
 }
@@ -302,6 +406,7 @@ nav {
   width: 100%;
   height: 100%;
   transition: 400ms ease;
+  border-radius: 8px;
 }
 
 .projects__img__links {
@@ -502,3 +607,141 @@ nav {
   font-size: 20px;
 }
 
+/* XL Screens */
+
+@media (max-width: 1280px) {
+  /* Nav */
+  nav {
+    top: 0;
+  }
+  .nav__link__wrapper {
+    border-radius: 0px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* About */
+  .about__row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about__content__wrapper {
+    align-items: center;
+    gap: 22px;
+  }
+  .about__para {
+    text-align: center;
+    max-width: 550px;
+  }
+  /* Projects */
+  .projects__content {
+    height: 320px;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .projects__img__wrapper {
+    max-width: 540px;
+  }
+
+  .projects__discription {
+    max-width: 280px;
+  }
+
+  .projects__para,
+  .projects__skills__wrapper {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Header */
+  .header__intro {
+    font-size: 14px;
+  }
+
+  .header__name {
+    font-size: 60px;
+    line-height: 60px;
+  }
+
+  .header__position {
+    font-size: 35px;
+    line-height: 40px;
+  }
+
+  .header__outtro {
+    font-size: 14px;
+  }
+
+  /* Project  */
+  .projects__content {
+    flex-direction: column;
+    height: auto;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .projects__img__wrapper {
+    max-width: 100%;
+  }
+
+  .projects__discription {
+    max-width: 100%;
+    justify-content: start;
+    gap: 16px;
+  }
+
+  .projects__para {
+    text-align: left;
+  }
+
+  .projects__discription__title,
+  .projects__skills__wrapper,
+  .projects__links__wrapper {
+    width: 100%;
+  }
+
+  /* Contact */
+
+  .contact__row {
+    flex-direction: column;
+  }
+
+  .contact__leftside {
+    width: 100%;
+  }
+
+  .contact__form {
+    width: 100%;
+  }
+
+  .contact__title {
+    font-size: 14px;
+  }
+
+  .contact__subtitle {
+    font-size: 30px;
+  }
+
+  .contact__para {
+    font-size: 14px;
+  }
+
+  .contact__email {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Navbar Section */
+  .navbar__button {
+    display: block;
+  }
+
+  .nav__links {
+    display: none;
+  }
+}
