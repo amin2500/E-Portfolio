@@ -20,8 +20,8 @@
 html body {
   overflow-x: hidden;
 }
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
 
 .blob {
@@ -743,5 +743,62 @@ nav {
 
   .nav__links {
     display: none;
+  }
+
+  /* Header */
+
+  .header__position {
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  .blob__blob-header {
+    right: -660px;
+  }
+
+  .about__img__wrapper {
+    max-width: 80%;
+  }
+
+  .about__skills__wrapper {
+    justify-content: center;
+  }
+
+  .projects__discription__title {
+    font-size: 20px;
+  }
+
+  .projects__skills,
+  .projects__para {
+    font-size: 12px;
+  }
+
+  .projects__skills {
+    padding: 4px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blob__blob-header {
+    right: -720px;
+  }
+
+  .header__name {
+    font-size: 48px;
+  }
+
+  .header__position {
+    font-size: 24px;
+    line-height: 20px;
+  }
+  /* About Section */
+  .about__para {
+    font-size: 14px;
+  }
+
+  /* Footer Section */
+
+  .footer__copyright{
+    font-size: 12px;
   }
 }
