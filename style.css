@@ -1,5 +1,5 @@
 * {
-  margin: 1;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: inter;
@@ -18,10 +18,10 @@
 }
 
 html body {
-  overflow-x:hidden;
+  overflow-x: hidden;
 }
 html {
-  scroll-behavior:smooth;
+  scroll-behavior: smooth;
 }
 
 .blob {
@@ -32,7 +32,6 @@ html {
 .blob__blob-header {
   position: absolute;
   right: -550px;
-  
 }
 .blob__blob-projects1 {
   position: absolute;
@@ -400,7 +399,7 @@ nav {
 .projects__img__wrapper {
   max-width: 100%;
   width: 100%;
-  height: 100%;
+  height: 100%J;
   overflow: hidden;
   position: relative;
 }
@@ -410,7 +409,6 @@ nav {
   height: 100%;
   transition: 400ms ease;
   border-radius: 8px;
-  object-fit:fill;
 }
 
 .projects__img__links {
@@ -661,7 +659,9 @@ nav {
 }
 
 @media (max-width: 768px) {
-   
+    html{
+        overflow-x: hidden;
+    }
   /* Header */
   .header__intro {
     font-size: 14px;
@@ -741,7 +741,9 @@ nav {
 }
 
 @media (max-width: 640px) {
-   
+    html{
+        overflow-x: hidden;
+    }
   /* Navbar Section */
   .navbar__button {
     display: block;
@@ -785,7 +787,9 @@ nav {
 }
 
 @media (max-width: 480px) {
-   
+    html{
+        overflow-x: hidden;
+    }
   .blob__blob-header {
     right: -720px;
   }
