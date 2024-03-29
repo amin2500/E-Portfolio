@@ -26,27 +26,24 @@ html {
 
 .blob {
   position: absolute;
-  z-index: -10;
 }
 
-.blob__blob-header {
-  position: absolute;
+.blob-header {
   right: -550px;
 }
-.blob__blob-projects1 {
-  position: absolute;
+.blob-projects1 {
   left: -550px;
   rotate: 220deg;
   z-index: -4;
 }
-.blob__blob-projects2 {
-  position: absolute;
+.blob-projects2 {
   right: -550px;
   rotate: 40deg;
-  bottom: -3450px;
+  bottom: 0;
 }
 
-#Home #project {
+#Home,
+#Projects {
   position: relative;
 }
 
@@ -659,9 +656,9 @@ nav {
 }
 
 @media (max-width: 768px) {
-    html{
-        overflow-x: hidden;
-    }
+  html {
+    overflow-x: hidden;
+  }
   /* Header */
   .header__intro {
     font-size: 14px;
@@ -741,9 +738,9 @@ nav {
 }
 
 @media (max-width: 640px) {
-    html{
-        overflow-x: hidden;
-    }
+  html {
+    overflow-x: hidden;
+  }
   /* Navbar Section */
   .navbar__button {
     display: block;
@@ -787,9 +784,9 @@ nav {
 }
 
 @media (max-width: 480px) {
-    html{
-        overflow-x: hidden;
-    }
+  html {
+    overflow-x: hidden;
+  }
   .blob__blob-header {
     right: -720px;
   }
@@ -809,7 +806,7 @@ nav {
 
   /* Footer Section */
 
-  .footer__copyright{
+  .footer__copyright {
     font-size: 12px;
   }
 }
