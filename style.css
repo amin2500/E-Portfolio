@@ -46,6 +46,74 @@ html {
 #Projects {
   position: relative;
 }
+/* Success */
+.success {
+  position: fixed;
+  right: 12px;
+  top: 12px;
+  z-index: 4;
+  background-color: white;
+  display: flex;
+  gap: 16px;
+  width: 320px;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
+  transform: translateX(200%);
+  transition: 250ms ease;
+}
+
+
+.success-open .success{
+    transform: translateX(0%);
+}
+
+.success__icon {
+  color: #4bb543;
+  font-size: 22px;
+}
+
+.success__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.message {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.message__para {
+  font-size: 14px;
+}
+
+
+.hidden{
+    display: none !important; 
+}
+@keyframes fadeinAnimate{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+
+
+}
+@keyframes slideupAnimate {
+    0%{
+        opacity: 0;
+        transform: translateY(16px)
+    }
+
+    100%{
+       opacity: 1;
+       transform: translateY(0px);
+    }
+}
+
 
 /* Nav Section */
 nav {
@@ -54,6 +122,8 @@ nav {
   height: 80px;
   z-index: 3;
   position: fixed;
+  animation: fadeinAnimate 1000ms;
+  transition: 300ms ease;
 }
 
 .nav__link__wrapper {
@@ -212,23 +282,27 @@ nav {
 .header__intro {
   font-size: 18px;
   color: rgba(0, 0, 0, 0.7);
+  animation: slideupAnimate 500ms;
 }
 
 .header__name {
   font-size: 96px;
   color: rgba(0, 0, 0, 0.7);
   line-height: 100px;
+  animation: slideupAnimate 500ms 100ms;
 }
 
 .header__position {
   font-size: 44px;
   color: rgba(0, 0, 0, 0.7);
   line-height: 44px;
+  animation: slideupAnimate 500ms 150ms;
 }
 
 .header__outtro {
   font-size: 18px;
   color: rgba(0, 0, 0, 0.7);
+  animation: slideupAnimate 500ms 200ms;
 }
 
 .header__span {
@@ -239,6 +313,7 @@ nav {
   display: flex;
   gap: 10px;
   margin-top: 16px;
+  animation: slideupAnimate 500ms 300ms;
 }
 
 .header__scroll {
@@ -250,7 +325,7 @@ nav {
   bottom: 32px;
   left: 50%;
   transform: translatex(-50%);
-  animation: headerscrollAnimate 1000ms infinite alternate-reverse;
+  animation:fadeinAnimate 500ms 500ms  backwards ,headerscrollAnimate 1000ms infinite alternate-reverse;
 }
 
 @keyframes headerscrollAnimate {
@@ -555,7 +630,7 @@ nav {
   background-color: rgba(227, 229, 229, 0.463);
   border-radius: 5px;
   border: none;
-  padding: 4 px 8px;
+  padding: 4px 8px;
   font-size: 16px;
 }
 
@@ -570,6 +645,35 @@ nav {
   transition: 400ms ease;
   width: 100%;
   border: 1px transparent solid;
+  position: relative;
+}
+
+.loading__spinner__wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  z-index: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.loading__spinner {
+  font-size: 25px;
+  animation: spinner 1000ms infinite;
+}
+
+@keyframes spinner {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
 }
 
 .form__button:hover {
@@ -582,7 +686,7 @@ nav {
 /* Footer Section */
 
 .footer__row {
-  background-color: black;
+  background-color: gray;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -656,9 +760,6 @@ nav {
 }
 
 @media (max-width: 768px) {
-  html {
-    overflow-x: hidden;
-  }
   /* Header */
   .header__intro {
     font-size: 14px;
@@ -738,9 +839,6 @@ nav {
 }
 
 @media (max-width: 640px) {
-  html {
-    overflow-x: hidden;
-  }
   /* Navbar Section */
   .navbar__button {
     display: block;
@@ -757,7 +855,7 @@ nav {
     line-height: 28px;
   }
 
-  .blob__blob-header {
+  .blob-header {
     right: -660px;
   }
 
@@ -784,10 +882,7 @@ nav {
 }
 
 @media (max-width: 480px) {
-  html {
-    overflow-x: hidden;
-  }
-  .blob__blob-header {
+  .blob-header {
     right: -720px;
   }
 

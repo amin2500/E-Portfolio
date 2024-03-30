@@ -10,8 +10,26 @@
       src="https://kit.fontawesome.com/de7fae2c76.js"
       crossorigin="anonymous"
     ></script>
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("Nt6Va1jBvglhI7Tuq");
+   })();
+</script>
+   
   </head>
   <body>
+    <!-- Success -->
+    <div class="success">
+        <i class="fa-regular fa-circle-check success__icon"></i>
+        <div class="success__wrapper">
+            <span class="message">Message Sent!</span>
+            <span class="message__para">Your message has been received. I'll get back to you soon!</span>
+        </div>
+    </div>
     <!-- Nav Section -->
     <nav class="nav">
       <div class="nav__link__wrapper">
@@ -50,7 +68,7 @@
     <header id="Home">
         <svg id="visual" viewBox="0 0 1200 1300" width="880" height="1200" xmlns="http://www.w3.org/2000/svg" version="1.1" class="blob blob-header">
             <g transform="translate(927.4519875387796 -111.9512848530959)">
-              <path d="M648.8 -752.4C919.6 -545.9 1272.3 -416.2 1356.5 -200.5C1440.7 15.3 1256.4 317.2 1074.3 608.8C892.3 900.4 712.4 1181.7 443.3 1327C174.2 1472.2 -184.1 1481.3 -364.5 1290.3C-544.9 1099.4 -547.4 708.5 -624.9 430.5C-702.4 152.5 -854.9 -12.6 -829.6 -144.5C-804.2 -276.4 -601 -375.2 -433.1 -599.8C-265.2 -824.3 -132.6 -1174.7 28.2 -1208.3C189 -1241.9 378 -958.8 648.8 -752.4" fill="#000000"></path>
+              <path d="M648.8 -752.4C919.6 -545.9 1272.3 -416.2 1356.5 -200.5C1440.7 15.3 1256.4 317.2 1074.3 608.8C892.3 900.4 712.4 1181.7 443.3 1327C174.2 1472.2 -184.1 1481.3 -364.5 1290.3C-544.9 1099.4 -547.4 708.5 -624.9 430.5C-702.4 152.5 -854.9 -12.6 -829.6 -144.5C-804.2 -276.4 -601 -375.2 -433.1 -599.8C-265.2 -824.3 -132.6 -1174.7 28.2 -1208.3C189 -1241.9 378 -958.8 648.8 -752.4" fill="gray"></path>
             </g>
           </svg>
         <div class="container">
@@ -391,24 +409,29 @@
                 <span class="contact__email">AminIbrahim2235@outlook.com</span>
               </a>
             </div>
-            <form class="contact__form">
+            <form class="contact__form" onsubmit="sendEmail(event)">
               <div class="form__item">
                 <label class="form__item__label">Name</label>
-                <input type="Name" class="form__item__input" />
+                <input type="text" name="name" class="form__item__input" />
               </div>
               <div class="form__item">
                 <label class="form__item__label">Email</label>
-                <input type="email" class="form__item__input" />
+                <input type="email" name="email" class="form__item__input" />
               </div>
               <div class="form__item">
                 <label class="form__item__label">Message</label>
                 <textarea
                   class="form__item__textarea"
                   required
+                  name="message"
                   name="textarea"
                 ></textarea>
               </div>
-              <button class="form__button">Send</button>
+              <button class="form__button">Send
+                <div class="loading__spinner__wrapper hidden">
+                    <i class="fa-solid fa-spinner loading__spinner"></i>
+                </div>
+              </button>
             </form>
           </div>
         </div>
@@ -435,3 +458,5 @@
     </footer>
   </body>
 </html>
+
+
